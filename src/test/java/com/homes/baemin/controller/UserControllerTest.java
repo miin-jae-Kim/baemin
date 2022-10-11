@@ -52,5 +52,9 @@ class UserControllerTest {
                 )
                 .andExpect(status().isCreated())
                 .andDo(print());
+
+        mockMvc.perform(get("/users/1"))
+                .andExpect(status().isOk())
+                .andDo(print());
     }
 }
